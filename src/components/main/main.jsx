@@ -14,14 +14,14 @@ function Main() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await ApiService.fetching(`search?part=snippet&q= New`);
+        const data = await ApiService.fetching(`search?part=snippet&q=${selectedCategory}`);
         setVideos(data.items);
       } catch (error) {
         console.log(err);
       }
     };
     getData();
-  }, []);
+  }, [selectedCategory]);
 
   return (
     <Stack>
