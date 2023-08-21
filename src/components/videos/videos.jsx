@@ -1,12 +1,14 @@
 import { Box, Stack } from "@mui/material";
 import VideoCard from "../video-card/video-card";
 import ChannelCard from "../channel-card/channel-card";
+import Loader from "../loader/loader";
 
 function Videos({ videos }) {
-  // console.log(videos);
+  if (!videos.length) return <Loader />;
 
   return (
     <Stack
+      key={videos.id}
       width={"100%"}
       direction={"row"}
       flexWrap={"wrap"}
